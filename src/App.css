@@ -27,3 +27,27 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/*底部选项卡开始*/
+.mainFooter {
+  height: 4.5rem;
+  display: flex;
+  display: -webkit-flex;
+  border-top: 1px solid #e1e6eb;
+  background-color: #fff;
+}
+
+.mainFooter > a {
+  flex: 1;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  display: inline-block;
+  color: rgba(52,214,206,0.85);
+  font-size: 1.4rem;
+}
+
+.mainFooter > a.addStory {
+  font-size: 4rem;
+  line-height: 4rem;
+}
+/*底部选项卡结束*/

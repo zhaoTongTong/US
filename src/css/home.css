@@ -1,7 +1,8 @@
 /*home外层组件开始*/
 .homePage{
-    height: 100%;
+    height: calc(100% - 4.5rem);
     background: url(../img/mmexport1505715388869.jpg) no-repeat center center;
+    background-size: cover;
 }
 /*home外层组件结束*/
 
