@@ -8,11 +8,11 @@ class App extends Component {
   render() {
     return (
       	<div className="App">
-	    	<Home />
-	    	<MainFooter />
+//	    	<Home />
+//	    	<MainFooter />
       	</div>
     );
   }
 }
 
-export default App;
+//export default App;
