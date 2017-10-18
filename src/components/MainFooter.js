@@ -1,29 +1,30 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 class MainFooter extends React.Component {
 	render() {
 		return(
 			<div className="mainFooter">
-				<a>
+				<Link to="/">
 					<span>首页</span>
 					<i></i>
-				</a>
-				<a>
+				</Link>
+				<Link to="/memory">
 					<span>纪念</span>
 					<i></i>
-				</a>
-				<a className="addStory">
+				</Link>
+				<Link  to="/add" className="addStory">
 					<span>+</span>
 					<i></i>
-				</a>
-				<a>
+				</Link>
+				<Link to="/message">
 					<span>留言</span>
 					<i></i>
-				</a>
-				<a>
+				</Link>
+				<Link to="/setting">
 					<span>设置</span>
 					<i></i>
-				</a>
+				</Link>
 			</div>
 		)
 	}
