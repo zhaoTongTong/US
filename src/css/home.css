@@ -37,3 +37,34 @@
     margin-top: -0.4rem;
 }
 /*首页header部分结束*/
+
+/*首页TODO组件*/
+.todo {
+	margin-top: 20px;
+  line-height: 30px;
+	text-align: center;
+	font-size: 24px;
+	color: rgba(255, 255, 255, 0.7);
+}
+.todo input {
+  display: block;
+	border: 0;
+	border-bottom:2px solid rgba(255, 255, 255, 0.7);
+  width: 200px;
+  margin: 0 auto;
+  background-color: transparent;
+}
+/*TODO组件结束*/
+
+
+/*首页tag组件开始*/
+.lovetag {
+  position: absolute;
+  bottom: 5.5rem;
+  height: 80px;
+  background-color: #ffffff;
+  width: 30rem;
+  left: 8px;
+  border-radius: 10px;
+}
+/*首页tag组件结束*/
