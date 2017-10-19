@@ -40,17 +40,17 @@
 
 /*首页TODO组件*/
 .todo {
-	margin-top: 20px;
-  line-height: 30px;
+	margin-top: 2rem;
 	text-align: center;
-	font-size: 24px;
+	font-size: 3rem;
 	color: rgba(255, 255, 255, 0.7);
 }
 .todo input {
   display: block;
+  padding: 0;
 	border: 0;
 	border-bottom:2px solid rgba(255, 255, 255, 0.7);
-  width: 200px;
+  width: 16rem;
   margin: 0 auto;
   background-color: transparent;
 }
@@ -61,10 +61,40 @@
 .lovetag {
   position: absolute;
   bottom: 5.5rem;
-  height: 80px;
+  height: 4rem;
   background-color: #ffffff;
-  width: 30rem;
-  left: 8px;
+  width: 95%;
+  left: 2.5%;
   border-radius: 10px;
+  display: flex;
+}
+.left, .right {
+  flex: 1;
+  height: 4rem;
+  /*line-height: 4rem;*/
+}
+.right {
+  text-align: right;
+}
+.face {
+  float: left;
+  background: url(../img/mmexport1505715388869.jpg) no-repeat center center;
+  background-size: cover;
+  margin: 0.75rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+}
+.basicInfo {
+  float: left;
+  height: 4rem;
+  line-height: 2rem;
+}
+.nickName {
+  font-size: 2.4rem;
+  color: rgba(52,214,206,0.85);
+}
+.currentFocus {
+  font-size: 2rem;
 }
 /*首页tag组件结束*/
