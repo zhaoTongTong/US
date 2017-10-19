@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css'
 
 class MainFooter extends React.Component {
 	render() {
