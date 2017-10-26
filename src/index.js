@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
-import App from './App';
+import './App.css';
 import Memory from './containers/Memory';
 import Home from './containers/Home';
 import Add from './containers/Add';
