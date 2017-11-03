@@ -5,10 +5,13 @@ import {
   Text,
   View,
   TextInput,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
-import CameraBtn from '../Components/CameraBtn'
+import pxToDp from '../Utils/pxToDp';
 // import HomeHeader from '../Components/HomeHeader'
+
+const {docWidth, docHeight} = Dimensions.get('window')
 
 class Home extends React.Component {
   constructor(props) {
@@ -27,9 +30,10 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <View>
+      <View style={styles.homePage}>
+        <Image style={styles.bgImg} source={require('../Asset/mmexport1505715388869.jpg')}>
+        </Image>
         <Todo/>
-        <CameraBtn onSelectedImg={this.onSelectedImg} photos={[]}/>
       </View>
     )
   }
@@ -38,46 +42,48 @@ class Home extends React.Component {
 class Todo extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { text: 'Useless Placeholder' }
+    this.state = { text: '' }
+  }
+  onEnd = (e) => {
+    alert(e.nativeEvent.text)
   }
   render() {
     return (
-      <View style={styles.homePage}>
-        <Image style={styles.bgImg} source={require('../Asset/mmexport1505715388869.jpg')}>
-        </Image>
-        {/*<Text style={styles.todoTitle}>What is your main focus for today?</Text>
+      <View style={styles.todo}>
+        <Text style={styles.todoTitle}>What is your main focus for today?</Text>
           <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
-        />*/}
-
+            style={styles.todoInput}
+            onChangeText={(text) => this.setState({text})}
+            value={this.state.text}
+            onEndEditing={this.onEnd}
+          />
       </View>
     )
   }
 }
 
-// class Lovetag extends React.Component {
-//   render() {
-//     return (
-//       <div className="lovetag">
-//         <div className="left">
-//           <div className="face"></div>
-//           <div className="basicInfo">
-//             <div className="nickName">小哥哥</div>
-//             <div className="currentFocus">to: 跳槽</div>
-//           </div>
-//         </div>
-//         <div className="right">
-//           21313
-//         </div>
-//       </div>
-//     )
-//   }
-// }
+class Lovetag extends React.Component {
+  render() {
+    return (
+      <View style={styles.lovetag}>
+        <View style={styles.leftTag}>
+          <Image style={styles.face}></Image>
+          <View style={styles.basicInfo}>
+            <Text style={styles.nickName}>小哥哥</Text>
+            <Text style={styles.currentFocus}>to: 跳槽</Text>
+          </View>
+        </View>
+        <View style={styles.rightTag}>
+          21313
+        </View>
+      </View>
+    )
+  }
+}
 const styles = {
   homePage: {
     flex: 1,
+    height: docHeight,
     alignItems: 'stretch',
     justifyContent: 'center',
     position:'relative',
@@ -86,12 +92,31 @@ const styles = {
     flex:1,
     justifyContent:'flex-end',
     alignItems:'center',
-    paddingBottom: 50,
+    paddingBottom: pxToDp(50),
+    resizeMode:'cover'
+  },
+  todo: {
+    flex: 1,
+    width: docWidth,
+    position: 'absolute',
+    backgroundColor: 'transparent',
+    top: pxToDp(150),
+    left: pxToDp(20)
   },
   todoTitle: {
-    fontSize: 30, 
+    fontSize: pxToDp(50), 
     color: "rgba(255, 255, 255, 0.7)", 
     textAlign: "center"
+  },
+  todoInput: { 
+    color: "rgba(255, 255, 255, 0.7)", 
+    flex: 1,
+    lineHeight: pxToDp(80),
+    height: pxToDp(80),
+    fontSize: pxToDp(50),
+    textAlign: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: "rgba(255, 255, 255, 0.7)"
   }
 }
 
