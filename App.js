@@ -26,90 +26,60 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component<{}> {
-  constructor(props) {
-      super(props);
-      this.state = {
-          selectedTab: 'home'
-      }
-  }
+    constructor() {
+        super();
+        this.state = {
+            selectedTab: 'home'
+        }
+    }
+
+    //导航器函数
+    _renderTabarItems(selectedTab,icon,title){
+        return (
+            <TabNavigator.Item
+                //设置选中的位置
+                selected={this.state.selectedTab === selectedTab}
+                //标题
+                title={title}
+                //标题样式
+                titleStyle={styles.tabText}
+                //选中时标题文字样式
+                selectedTitleStyle={styles.selectedTabText}
+                //图标
+                renderIcon={() => <Icon name={icon} color="#999" size={22}/>}
+                //选中时图标
+                renderSelectedIcon={() => <Icon name={icon} color="rgb(52,214,206)" size={24} />}
+                //点击Event
+                onPress={() => this.setState({ selectedTab: selectedTab })}
+            >
+            <View style={styles.page}>
+                {
+                    selectedTab === "home" ?
+                        <Home />
+                         :
+                        <Text style={{fontSize:18,padding:15,color: '#999',textAlign: 'center'}}>{title}</Text>
+                }
+            </View>
+            </TabNavigator.Item>
+        )
+    }
 
   render() {
     return (
         <View style={styles.container}>
           <TabNavigator>
-              <TabNavigator.Item
-                  //设置选中的位置
-                  selected={this.state.selectedTab === 'home'}
-                  //标题
-                  title="首页"
-                  //标题样式
-                  titleStyle={styles.tabText}
-                  //选中时标题文字样式
-                  selectedTitleStyle={styles.selectedTabText}
-                  //图标
-                  renderIcon={() => <Icon name="md-home" color="#999" size={22}/>}
-                  //选中时图标
-                  renderSelectedIcon={() => <Icon name="md-home" color="rgb(52,214,206)" size={24}/>}
-                  //点击Event
-                  onPress={() => this.setState({ selectedTab: 'home' })}>
-                  <View style={styles.page}>
-                      <Home />
-                  </View>
-              </TabNavigator.Item>
-              <TabNavigator.Item
-                  selected={this.state.selectedTab === 'story'}
-                  title="故事"
-                  titleStyle={styles.tabText}
-                  selectedTitleStyle={styles.selectedTabText}
-                  renderIcon={() => <Icon name="md-images" color="#999" size={22}/>}
-                  renderSelectedIcon={() =>  <Icon name="md-images" color="rgb(52,214,206)" size={24}/>}
-                  onPress={() => this.setState({ selectedTab: 'story' })}>
-                  <View style={styles.page}>
-                      <Text style={{fontSize:18,padding:15,color: '#999',textAlign: 'center'}}>故事</Text>
-                  </View>
-              </TabNavigator.Item>
-              <TabNavigator.Item
-                  selected={this.state.selectedTab === 'memory'}
-                  title="纪念日"
-                  titleStyle={styles.tabText}
-                  selectedTitleStyle={styles.selectedTabText}
-                  renderIcon={() => <Icon name="md-heart" color="#999" size={22}/>}
-                  renderSelectedIcon={() => <Icon name="md-heart" color="rgb(52,214,206)" size={24}/>}
-                  onPress={() => this.setState({ selectedTab: 'memory' })}>
-                  <View style={styles.page}>
-                      <Text style={{fontSize:18,padding:15,color: '#999',textAlign: 'center'}}>纪念日</Text>
-                  </View>
-              </TabNavigator.Item>
-              <TabNavigator.Item
-                  selected={this.state.selectedTab === 'message'}
-                  title="留言"
-                  titleStyle={styles.tabText}
-                  selectedTitleStyle={styles.selectedTabText}
-                  renderIcon={() => <Icon name="md-chatboxes" color="#999" size={22}/>}
-                  renderSelectedIcon={() => <Icon name="md-chatboxes" color="rgb(52,214,206)" size={24}/>}
-                  onPress={() => this.setState({ selectedTab: 'message' })}>
-                  <View style={styles.page}>
-                      <Text style={{fontSize:18,padding:15,color: '#999',textAlign: 'center'}}>留言</Text>
-                  </View>
-              </TabNavigator.Item>
-              <TabNavigator.Item
-                  selected={this.state.selectedTab === 'setting'}
-                  title="我的"
-                  titleStyle={styles.tabText}
-                  selectedTitleStyle={styles.selectedTabText}
-                  renderIcon={() => <Icon name="ios-person" color="#999" size={22}/>}
-                  renderSelectedIcon={() => <Icon name="ios-person" color="rgb(52,214,206)" size={24}/>}
-                  onPress={() => this.setState({ selectedTab: 'setting' })}>
-                  <View style={styles.page}>
-                      <Text style={{fontSize:18,padding:15,color: '#999',textAlign: 'center'}}>我的</Text>
-                  </View>
-              </TabNavigator.Item>
+              {this._renderTabarItems('home', "md-home", "首页")}
+              {this._renderTabarItems('story', "md-images", "故事")}
+              {this._renderTabarItems('memory', "md-heart", "纪念日")}
+              {this._renderTabarItems('message', "md-chatboxes", "留言")}
+              {this._renderTabarItems('setting', "ios-person", "我的")}
           </TabNavigator>
           <Toast position={"center"} ref="toast"/>
       </View>
     );
   }
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1
