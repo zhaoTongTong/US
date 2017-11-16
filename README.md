@@ -13,7 +13,7 @@
 * 另一方拿着邀请码进行绑定
 * 绑定成功之后两人方可进行使用    
 
-#如何开始    
+# 如何开始    
 * git clone https://github.com/zhaoTongTong/US.git
 * npm install
 * 在mac上运行：react-native run-ios
