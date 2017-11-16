@@ -34,6 +34,7 @@ class Home extends React.Component {
         <Image style={styles.bgImg} source={require('../Asset/mmexport1505715388869.jpg')}>
         </Image>
         <Todo/>
+        <Lovetag/>
       </View>
     )
   }
@@ -67,14 +68,13 @@ class Lovetag extends React.Component {
     return (
       <View style={styles.lovetag}>
         <View style={styles.leftTag}>
-          <Image style={styles.face}></Image>
+          <Image style={styles.face} source={require('../Asset/mmexport1505715388869.jpg')}></Image>
           <View style={styles.basicInfo}>
             <Text style={styles.nickName}>小哥哥</Text>
             <Text style={styles.currentFocus}>to: 跳槽</Text>
           </View>
         </View>
         <View style={styles.rightTag}>
-          21313
         </View>
       </View>
     )
@@ -108,7 +108,7 @@ const styles = {
     color: "rgba(255, 255, 255, 0.7)", 
     textAlign: "center"
   },
-  todoInput: { 
+  todoInput: {
     color: "rgba(255, 255, 255, 0.7)", 
     flex: 1,
     lineHeight: pxToDp(80),
@@ -117,6 +117,23 @@ const styles = {
     textAlign: 'center',
     borderBottomWidth: 1,
     borderBottomColor: "rgba(255, 255, 255, 0.7)"
+  },
+  lovetag: {
+    position: 'absolute',
+    bottom: pxToDp(150),
+    left: pxToDp(0),
+    right: pxToDp(0),
+  },
+  leftTag: {
+    flex: 1
+  },
+  face: {
+    width: pxToDp(100),
+    height: pxToDp(100),
+    borderRadius: pxToDp(50)
+  },
+  rightTag: {
+    flex: 1
   }
 }
 
