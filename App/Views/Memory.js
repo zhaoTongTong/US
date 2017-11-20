@@ -1,11 +1,27 @@
 import React from 'react'
-import MainFooter from '../components/MainFooter'
-import '../css/memory.css'
+import {
+    StyleSheet,
+    Text,
+    View,
+    TextInput,
+    Image,
+} from 'react-native';
 
-mui.plusReady(function() {
-    console.log("当前页面URL："+plus.webview.currentWebview().getURL())
-})
+/***
+ * MainFooter是之前用react时写的底部工具栏，如今废弃
+ ***/
+// import MainFooter from '../Components/MainFooter'
 
+/****
+ *
+ * reac-native中要以对象的形式写样式，小哥哥有时间了改吧，我去写新的模块
+ *
+ * ***/
+// import '../Components/Styles/memory.css'
+
+// mui.plusReady(function() {
+//     console.log("当前页面URL："+plus.webview.currentWebview().getURL())
+// })
 class Memory extends React.Component {
 	constructor() {
 		super()
@@ -34,10 +50,10 @@ class Memory extends React.Component {
 	
 	render() {
 		return(
-			<div className="memory">
+			<View className="memory">
 				<MemoryList listArr={this.state.listArr} />
-				<MainFooter />
-			</div>
+				{/*<MainFooter />*/}
+			</View>
 		)
 	}
 }
@@ -104,20 +120,20 @@ class MemoryList extends React.Component {
 	}
 
 	addMemory = () => {
-		mui.plusReady(function() {
-		    console.log("当前页面URL："+plus.webview.currentWebview().getURL())
-		})
+		// mui.plusReady(function() {
+		//     console.log("当前页面URL："+plus.webview.currentWebview().getURL())
+		// })
 	}
 
 	render() {
-		return (
-			<div className="memoryList">
-				<p className="memoryListTitle">我们的纪念日</p>
-				<div className="memoryListAdd" onClick={this.addMemory}>
-					<i>+</i>
-					<span>添加纪念日</span>
-				</div>
-				<ul>
+        return (
+			<View className="memoryList">
+				<Text className="memoryListTitle">我们的纪念日</Text>
+				<View className="memoryListAdd" onClick={this.addMemory}>
+					<Text>+</Text>
+					<Text>添加纪念日</Text>
+				</View>
+				<View>
 					{
 						this.props.listArr.map((item, index) => {
 							return (
@@ -125,8 +141,8 @@ class MemoryList extends React.Component {
 							)
 						})
 					}
-				</ul>
-			</div>
+				</View>
+			</View>
 		)
 	}
 }
@@ -134,14 +150,14 @@ class MemoryList extends React.Component {
 class MemoryItem extends React.Component {
 	render() {
 		return (
-			<li className="memoryListItem">
-				<i>{this.props.type === 0 ? '🎂' : '❤'}</i>
-				<span>{this.props.title}</span>
-				<div className="memoryListItemInfo">
-					<span>距今 {Math.abs(this.props.days)} 天</span>
-					<p>{this.props.date}</p>
-				</div>
-			</li>
+			<View className="memoryListItem">
+				<Text>{this.props.type === 0 ? '🎂' : '❤'}</Text>
+				<Text>{this.props.title}</Text>
+				<View className="memoryListItemInfo">
+					<Text>距今 {Math.abs(this.props.days)} 天</Text>
+					<Text>{this.props.date}</Text>
+				</View>
+			</View>
 		)
 	}
 }

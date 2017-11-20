@@ -1,12 +1,22 @@
 import React from 'react'
-import MainFooter from '../components/MainFooter'
+import {
+    StyleSheet,
+    Text,
+    View,
+    TextInput,
+    Image,
+} from 'react-native';
+
+/***
+ * MainFooter是之前用react时写的底部工具栏，如今废弃
+ ***/
+// import MainFooter from '../Components/MainFooter'
 
 class Add extends React.Component {
 	render() {
 		return(
-			<div className="add">
-				<MainFooter />
-			</div>
+			<View className="add">
+			</View>
 		)
 	}
 }
