@@ -8,8 +8,8 @@ import {
     Image,
     Dimensions
 } from 'react-native';
-import pxToDp from '../Utils/pxToDp';
-// import HomeHeader from '../Components/HomeHeader'
+import pxToDp from '../utils/pxToDp';
+// import HomeHeader from '../components/HomeHeader'
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const {docWidth, docHeight} = Dimensions.get('window')
@@ -34,7 +34,7 @@ class Home extends React.Component {
     render() {
         return (
             <View style={styles.homePage}>
-                <Image style={styles.bgImg} source={require('../Asset/bg.jpeg')}>
+                <Image style={styles.bgImg} source={require('../asset/bg.jpeg')}>
                 </Image>
                 <Todo/>
                 <Lovetag/>
@@ -73,14 +73,14 @@ class Lovetag extends React.Component {
         return (
             <View style={styles.lovetag}>
                 <View style={styles.leftTag}>
-                    <Image style={styles.face} source={require('../Asset/mmexport1505715388869.jpg')}></Image>
+                    <Image style={styles.face} source={require('../asset/mmexport1505715388869.jpg')}></Image>
                     <View style={styles.basicInfo}>
                         <Text style={styles.nickName}>小哥哥</Text>
                         <Text style={styles.currentFocus}><Icon style={styles.star} name="md-star"/>&nbsp;唱歌</Text>
                     </View>
                 </View>
                 <View style={styles.rightTag}>
-                    <Image style={styles.face} source={require('../Asset/tt.jpeg')}></Image>
+                    <Image style={styles.face} source={require('../asset/tt.jpeg')}></Image>
                     <View style={styles.basicInfoReverse}>
                         <Text style={styles.nickName}>小姐姐</Text>
                         <Text style={styles.currentFocus}>跳舞&nbsp;<Icon style={styles.star} name="md-star"/></Text>

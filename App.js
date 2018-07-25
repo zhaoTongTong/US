@@ -11,16 +11,16 @@ import {
   Text,
   View
 } from 'react-native';
-// import FooterTab from './App/Components/FooterTab'
+// import FooterTab from './App/components/FooterTab'
 import TabNavigator from 'react-native-tab-navigator'
 import Toast from 'react-native-easy-toast'
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import Home from './App/Views/Home';
-import Memory from './App/Views/Memory';
-import Message from './App/Views/Message';
-import Add from './App/Views/Add';
-import Setting from './App/Views/Setting';
+import Home from './App/views/Home';
+import Memory from './App/views/Memory';
+import Message from './App/views/Message';
+import Add from './App/views/Add';
+import Setting from './App/views/Setting';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +

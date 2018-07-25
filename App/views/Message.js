@@ -10,7 +10,7 @@ import {
 /***
  * MainFooter是之前用react时写的底部工具栏，如今废弃
  ***/
-// import MainFooter from '../Components/MainFooter'
+// import MainFooter from '../components/MainFooter'
 
 class Message extends React.Component {
 	render() {

@@ -10,14 +10,14 @@ import {
 /***
  * MainFooter是之前用react时写的底部工具栏，如今废弃
  ***/
-// import MainFooter from '../Components/MainFooter'
+// import MainFooter from '../components/MainFooter'
 
 /****
  *
  * reac-native中要以对象的形式写样式，小哥哥有时间了改吧，我去写新的模块
  *
  * ***/
-// import '../Components/Styles/memory.css'
+// import '../components/Styles/memory.css'
 
 // mui.plusReady(function() {
 //     console.log("当前页面URL："+plus.webview.currentWebview().getURL())
