@@ -1,10 +1,10 @@
 import React from 'react'
 import {
-    StyleSheet,
-    Text,
-    View,
-    TextInput,
-    Image,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Image,
 } from 'react-native';
 
 /***
@@ -13,13 +13,13 @@ import {
 // import MainFooter from '../components/MainFooter'
 
 class Setting extends React.Component {
-	render() {
-		return(
-			<View className="setting">
-				{/*<MainFooter />*/}
-			</View>
-		)
-	}
+  render() {
+    return(
+      <View className="setting">
+        {/*<MainFooter />*/}
+      </View>
+    )
+  }
 }
 
 export default Setting

@@ -1,10 +1,10 @@
 import React from 'react'
 import {
-    StyleSheet,
-    Text,
-    View,
-    TextInput,
-    Image,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Image,
 } from 'react-native';
 
 /***
@@ -13,12 +13,12 @@ import {
 // import MainFooter from '../components/MainFooter'
 
 class Add extends React.Component {
-	render() {
-		return(
-			<View className="add">
-			</View>
-		)
-	}
+  render() {
+    return(
+      <View className="add">
+      </View>
+    )
+  }
 }
 
 export default Add

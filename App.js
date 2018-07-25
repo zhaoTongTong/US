@@ -16,11 +16,11 @@ import TabNavigator from 'react-native-tab-navigator'
 import Toast from 'react-native-easy-toast'
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import Home from './App/views/Home';
-import Memory from './App/views/Memory';
-import Message from './App/views/Message';
-import Add from './App/views/Add';
-import Setting from './App/views/Setting';
+import Home from './App/components/Home/index.js';
+import Memory from './App/components/Memory/index.js';
+import Message from './App/components/Message/index.js';
+import Add from './App/components/AddMemoryDay/index.js';
+import Setting from './App/components/Setting/index.js';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
